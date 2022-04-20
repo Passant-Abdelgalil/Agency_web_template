@@ -1,0 +1,94 @@
+// Assignment 1
+$main: "school";
+$child: "box";
+$language: "ar"; // English
+$gap: 20px;
+
+// Output
+.#{$main} {
+  padding: $gap;
+  direction: if($language == "en", ltr, rtl);
+  margin-left: 20px;
+}
+.#{$main} .#{$main}-.#{$child} {
+  padding: calc(#{$gap} / 2);
+}
+.#{$main}:hover .#{$main}-.#{$child} {
+  background-color: #eee;
+}
+
+// Assignment 1 END
+
+// Assignment 2
+.content {
+  > {
+    .box {
+      padding: 15px;
+      > .title {
+        font-size: 18px;
+      }
+    }
+  }
+  .cat {
+    padding: 15px;
+  }
+  &.premium::before {
+    content: " Premium Box";
+  }
+  &.premium:hover {
+    background-color: #eee;
+  }
+}
+// Assignment 2 END
+
+// Assignment 3
+.class > {
+  .child {
+    padding: 10px;
+  }
+}
+.class {
+  > {
+    .child {
+      padding: 10px;
+    }
+  }
+}
+.class {
+  > .child {
+    padding: 10px;
+  }
+}
+// Assignment 3 END
+
+// Assignment 4
+.class {
+  font-weight: bold;
+  font-size: 20px;
+}
+%bold-20{
+  font-weight: bold;
+  font-size: 20px;
+}
+.class{
+  @extend %bold-20;
+}
+// Assignment 4 END
+
+// Assignment 5
+.parent {
+  & + .sibling {
+    margin: auto {
+      top: 10px;
+    }
+    & ~ .last {
+      padding: 10px;
+    }
+  }
+}
+// .parent + .sibiling{
+//  margin: auto;
+//  margin-top: 10px;
+// }
+// .parent +.sibiling ~ .last{
+//   padding: 10px;
