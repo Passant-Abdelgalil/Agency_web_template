@@ -8,7 +8,7 @@
 
 ### Built with
 
-- HTML3
+- HTML5
 - CSS3
 
 ## Getting Started
